@@ -4,18 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <variable
-            name="viewModel"
-            type="com.howlab.mvvmhowlstagram.login.LoginViewModel" />
-        <variable
-            name="activity"
-            type="com.howlab.mvvmhowlstagram.login.LoginActivity" />
+
     </data>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".login.LoginActivity">
+        tools:context=".LoginActivity">
 
         <ImageView
             android:id="@+id/logo_imageview"
@@ -37,11 +32,10 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:text="@={viewModel.id}"
-                    android:id="@+id/edittext_id"
+                    android:id="@+id/edittext_phonenumber"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/email" />
+                    android:hint="@string/phone_number" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -52,11 +46,10 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:text="@={viewModel.password}"
-                    android:id="@+id/edittext_password"
+                    android:id="@+id/edittext_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/password" />
+                    android:hint="@string/email" />
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 
@@ -69,44 +62,30 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:onClick="@{() -> activity.emailLogin()}"
-                android:id="@+id/email_login_button"
+                android:id="@+id/find_id_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:text="@string/signin_email" />
-
+                android:text="@string/find_id" />
             <androidx.appcompat.widget.AppCompatButton
-                android:onClick="@{() -> activity.findMyPassword()}"
-                android:id="@+id/find_id_password_button"
+                android:id="@+id/find_password_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:text="@string/find_id_password" />
+                android:text="@string/find_password" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/facebook_login_button"
+                android:layout_marginTop="30dp"
+                android:id="@+id/dismiss_btn"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="40dp"
                 android:layout_marginRight="20dp"
-                android:background="@drawable/btn_signin_facebook"
-                android:text="@string/signin_facebook"
-                android:textColor="@android:color/white" />
+                android:text="@string/close" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/google_login_button"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/btn_signin_google"
-                android:text="@string/signin_google"
-                android:textColor="@android:color/white" />
+
         </LinearLayout>
 
     </RelativeLayout>
