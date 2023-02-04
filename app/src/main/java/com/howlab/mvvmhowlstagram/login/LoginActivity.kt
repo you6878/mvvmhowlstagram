@@ -6,10 +6,12 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import com.google.firebase.auth.FirebaseAuth
 import com.howlab.mvvmhowlstagram.R
 import com.howlab.mvvmhowlstagram.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
+    lateinit var auth : FirebaseAuth
     lateinit var binding : ActivityLoginBinding
     val loginViewModel: LoginViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,6 +20,7 @@ class LoginActivity : AppCompatActivity() {
         binding.viewModel = loginViewModel
         binding.activity = this
         binding.lifecycleOwner = this
+        auth = FirebaseAuth.getInstance()
         setObserve()
 
     }
@@ -34,9 +37,17 @@ class LoginActivity : AppCompatActivity() {
             }
         }
     }
-    fun loginEmail(){
+    fun loginWithSignupEmail(){
         println("Email")
-        loginViewModel.showInputNumberActivity.value = true
+        auth.createUserWithEmailAndPassword(loginViewModel.id.value.toString(),loginViewModel.password.value.toString()).addOnCompleteListener {
+            if(it.isSuccessful){
+                loginViewModel.showInputNumberActivity.value = true
+            }else{
+                //아이디가 있을경우
+
+            }
+        }
+
     }
     fun findId(){
         println("findId")
