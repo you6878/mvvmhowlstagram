@@ -19,6 +19,7 @@ class LoginActivity : AppCompatActivity() {
         binding.activity = this
         binding.lifecycleOwner = this
         setObserve()
+
     }
     fun setObserve(){
         loginViewModel.showInputNumberActivity.observe(this){
