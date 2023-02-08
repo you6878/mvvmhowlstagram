@@ -69,7 +69,7 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:onClick="@{() -> activity.loginWithSignupEmail()}"
+                android:onClick="@{() -> viewModel.loginWithSignupEmail()}"
                 android:id="@+id/email_login_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -98,6 +98,7 @@
                 android:textColor="@android:color/white" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:onClick="@{(view) -> viewModel.loginGoogle(view)}"
                 android:id="@+id/google_login_button"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
