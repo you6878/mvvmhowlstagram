@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">MvvmHowlstagram</string>
-    <string name="facebook_app_id">397161661812167</string>
-    <string name="fb_login_protocol_scheme">fb397161661812167</string>
+
+    <string name="facebook_app_id">1413298212813079</string>
+    <string name="fb_login_protocol_scheme">fb7459ccfb242aedb9e7774a406c04cbfa</string>
+    <string name="facebook_client_token">7459ccfb242aedb9e7774a406c04cbfa</string>
 
 
     <!-- Sign In -->
