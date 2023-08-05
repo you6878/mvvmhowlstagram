@@ -19,6 +19,7 @@ import com.facebook.login.LoginManager
 import com.facebook.login.LoginResult
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.common.api.ApiException
+import com.howlab.mvvmhowlstagram.MainActivity
 import com.howlab.mvvmhowlstagram.R
 import com.howlab.mvvmhowlstagram.databinding.ActivityLoginBinding
 import java.security.MessageDigest
@@ -88,6 +89,11 @@ class LoginActivity : AppCompatActivity() {
         loginViewModel.showFindIdActivity.observe(this){
             if(it){
                 startActivity(Intent(this,FindIdActivity::class.java))
+            }
+        }
+        loginViewModel.showMainActivity.observe(this){
+            if(it){
+                startActivity(Intent(this,MainActivity::class.java))
             }
         }
     }
